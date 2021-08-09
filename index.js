@@ -48,6 +48,9 @@ app.get("/favorites", async (req, res) => {
     res.status(400).json({ message: error.message });
   }
 });
+app.all("*", (req, res) => {
+  res.status(400).json({ message: error.message });
+});
 
 app.listen(process.env.PORT, () => {
   console.log("Server Started");
